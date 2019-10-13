@@ -7,3 +7,6 @@ Author URI:
 Template:       storefront
 Version:        0.1.0
 */
+.site-header-cart .cart-contents span.rur span {
+  display: none;
+}
