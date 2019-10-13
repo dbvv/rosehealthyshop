@@ -31,3 +31,4 @@ require get_stylesheet_directory() . '/inc/header.php';
 require get_stylesheet_directory() . '/inc/woocommerce-loop.php';
 require get_stylesheet_directory() . '/inc/my-account.php';
 require get_stylesheet_directory() . '/inc/cart.php';
+require get_stylesheet_directory() . '/inc/order-checkout.php';
