@@ -29,3 +29,4 @@ require get_stylesheet_directory() . '/inc/header.php';
  * Woocommerce settings
  */
 require get_stylesheet_directory() . '/inc/woocommerce-loop.php';
+require get_stylesheet_directory() . '/inc/my-account.php';
