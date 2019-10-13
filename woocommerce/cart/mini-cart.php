@@ -23,7 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
-
   <ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
     <?php
       do_action( 'woocommerce_before_mini_cart_contents' );
@@ -67,7 +66,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
     ?>
   </ul>
 
-  <p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Subtotalsss', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+  <p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Total', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
   <?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
