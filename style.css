@@ -40,6 +40,6 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
   }
 }
 
-.storefront-handheld-footer-bar ul li.search > a::before {
+.storefront-handheld-footer-bar ul li.home > a::before {
   content: '\f015';
 }

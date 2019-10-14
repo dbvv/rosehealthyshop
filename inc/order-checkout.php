@@ -24,3 +24,5 @@ function rhs_checkout_fields($fields)
   unset($fields['order']);
   return $fields;
 }
+
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
