@@ -21,6 +21,6 @@ function rhs_checkout_fields($fields)
   unset($fields['billing']['billing_state']);
   unset($fields['billing']['billing_postcode']);
   unset($fields['billing']['billing_phone']);
-  // dump($fields['billing']);
+  unset($fields['order']);
   return $fields;
 }
