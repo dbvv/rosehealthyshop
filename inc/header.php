@@ -29,3 +29,11 @@ function rhs_disable_woocommerce_cart_fragments()
     wp_dequeue_script('wc-cart-fragments');
   }
 }
+
+add_action('template_redirect', 'remove_shop_breadcrumbs');
+function remove_shop_breadcrumbs()
+{
+  if (is_shop()) {
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+  }
+}

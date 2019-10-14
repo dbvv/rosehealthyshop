@@ -7,39 +7,39 @@ Author URI:
 Template:       storefront
 Version:        0.1.0
 */
+
 .site-header-cart .cart-contents span.rur span {
   display: none;
 }
-
 #order_review, #order_review_heading {
   float: none;
   width: 100%;
 }
-
 /**
  * Woocommerce checkout form
  */
+
 form.woocommerce-checkout {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #customer_details {
   flex: 0 45% !important;
   width: 45% !important;
   float: none !important;
   margin: 0 !important;
 }
-
 @media screen and (max-width: 767px) {
   form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #customer_details {
     flex: 0 100% !important;
     width: 100% !important;
   }
 }
-
-.storefront-handheld-footer-bar ul li.home > a::before {
+.storefront-handheld-footer-bar ul li.home>a::before {
   content: '\f015';
+}
+.woocommerce-breadcrumb {
+  visibility: hidden;
 }
