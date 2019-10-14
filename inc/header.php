@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', 'rhs_disable_woocommerce_cart_fragments', 11);
 function rhs_disable_woocommerce_cart_fragments()
 {
   if (WC()->cart->get_cart_contents_count() == 0) {
-    // Do something fun
+    // disable fragments
     wp_dequeue_script('wc-cart-fragments');
   }
 }
