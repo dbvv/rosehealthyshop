@@ -29,6 +29,7 @@ function wc_limit_one_per_order($passed_validation, $product_id)
   if ($in_cart) {
     $notice = __('Товар уже в корзине!');
     wc_add_notice($notice, 'notice');
+    wp_redirect( wc_get_checkout_url(), $status = 302 );
     return false;
   } else {
     return $passed_validation;

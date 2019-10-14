@@ -20,9 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $products = $order->get_items();
-
-dump($products);
-
 ?>
 
   <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
