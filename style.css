@@ -32,3 +32,14 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
   float: none !important;
   margin: 0 !important;
 }
+
+@media screen and (max-width: 767px) {
+  form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #customer_details {
+    flex: 0 100% !important;
+    width: 100% !important;
+  }
+}
+
+.storefront-handheld-footer-bar ul li.search > a::before {
+  content: '\f015';
+}

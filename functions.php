@@ -32,3 +32,13 @@ require get_stylesheet_directory() . '/inc/woocommerce-loop.php';
 require get_stylesheet_directory() . '/inc/my-account.php';
 require get_stylesheet_directory() . '/inc/cart.php';
 require get_stylesheet_directory() . '/inc/order-checkout.php';
+
+/**
+ * Footer
+ */
+require get_stylesheet_directory() . '/inc/footer.php';
+
+/**
+ * Customizer settings
+ */
+require get_stylesheet_directory() . '/inc/customizer.php';
