@@ -14,6 +14,7 @@
  * @package WooCommerce/Templates
  * @version 3.5.0
  */
+global $woocommerce;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -30,7 +31,6 @@ do_action( 'woocommerce_before_cart' ); ?>
         <th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
         <th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
         <!-- <th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th> -->
-        <th class="product-subtotal"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
       </tr>
     </thead>
     <tbody>
@@ -96,14 +96,6 @@ do_action( 'woocommerce_before_cart' ); ?>
                 echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
               ?>
             </td>
-
-            
-
-            <td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
-              <?php
-                echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-              ?>
-            </td>
           </tr>
           <?php
         }
@@ -122,7 +114,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             </div>
           <?php } ?>
 
-          <!-- <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button> -->
+          <?php echo __('Total', 'woocommerce') . ' ' . $woocommerce->cart->get_cart_total(); ?>
 
           <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 
