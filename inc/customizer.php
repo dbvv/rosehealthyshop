@@ -11,4 +11,12 @@ function rhs_customizer_settings($wp_customize)
     'label'   => __('Правила и условия'),
     'type'    => 'dropdown-pages',
   ));
+
+  $wp_customize->add_setting('contacts_page', array());
+
+  $wp_customize->add_control('contacts_page', array(
+    'section' => 'static_front_page',
+    'label'   => __('Контакты'),
+    'type'    => 'dropdown-pages',
+  ));
 }
