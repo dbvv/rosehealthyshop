@@ -26,3 +26,17 @@ function rhs_checkout_fields($fields)
 }
 
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
+
+function woocommerce_button_proceed_to_checkout()
+{
+  $checkout_url = WC()->cart->get_checkout_url();?>
+ <a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="checkout-button button alt wc-forward">
+ <?php esc_html_e('Оплатить заказ', 'woocommerce');?>
+ </a>
+ <?php
+}
+
+function woocommerce_widget_shopping_cart_proceed_to_checkout()
+{
+  echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="button checkout wc-forward">' . esc_html__('Оплатить заказ', 'woocommerce') . '</a>';
+}
