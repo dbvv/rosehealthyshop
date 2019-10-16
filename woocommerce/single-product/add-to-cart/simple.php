@@ -23,9 +23,24 @@ if ( ! $product->is_purchasable() ) {
 	return;
 }
 
+
 $current_product_id = $product->get_id();
 
-// get the product based on the ID
+if (is_bought($current_product_id)) {
+	echo '<p>' . __('Товар уже куплен!') . '</p>';
+  // get all downloadable files from the product
+  $files = $product->get_downloads();
+  $files_output = '';
+
+  //Loop through each downloadable file
+  foreach ($files as $file) {
+    //store the html with link and name in $output variable assuming the $output variable is declared above
+    $files_output .= '<p><a href="' . $file['file'] . '" class="button" download target="_blank"><i class="fa fa-download"></i> ' . $file['name'] . '</a></p>';
+
+    echo $files_output;
+  }
+} else {
+	// get the product based on the ID
 $product = wc_get_product($current_product_id);
 
 // get the "Checkout Page" URL
@@ -60,4 +75,7 @@ if ( $product->is_in_stock() ) : ?>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
-<?php endif; ?>
+<?php endif;	
+}
+
+

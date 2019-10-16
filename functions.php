@@ -33,6 +33,7 @@ require get_stylesheet_directory() . '/inc/my-account.php';
 require get_stylesheet_directory() . '/inc/cart.php';
 require get_stylesheet_directory() . '/inc/order-checkout.php';
 require get_stylesheet_directory() . '/inc/single-product.php';
+require get_stylesheet_directory() . '/inc/pursached.php';
 
 /**
  * Footer
