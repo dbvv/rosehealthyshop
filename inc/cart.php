@@ -3,21 +3,21 @@
 // remove refresh buttons and useless others
 remove_action('woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10);
 
-add_filter('woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text');
-add_filter('woocommerce_product_add_to_cart_text', 'woo_custom_cart_button_text');
+// add_filter('woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text');
+// add_filter('woocommerce_product_add_to_cart_text', 'woo_custom_cart_button_text');
 
 function woo_custom_cart_button_text()
 {
   return __('Купить', 'woocommerce');
 }
 
-add_filter('woocommerce_add_to_cart_redirect', 'rhs_add_to_cart_redirect');
-function rhs_add_to_cart_redirect()
-{
-  global $woocommerce;
-  $checkout_url = wc_get_checkout_url();
-  return $checkout_url;
-}
+// add_filter('woocommerce_add_to_cart_redirect', 'rhs_add_to_cart_redirect');
+// function rhs_add_to_cart_redirect()
+// {
+//   global $woocommerce;
+//   $checkout_url = wc_get_checkout_url();
+//   return $checkout_url;
+// }
 
 add_filter('woocommerce_add_to_cart_validation', 'wc_limit_one_per_order', 10, 2);
 function wc_limit_one_per_order($passed_validation, $product_id)
@@ -29,9 +29,28 @@ function wc_limit_one_per_order($passed_validation, $product_id)
   if ($in_cart) {
     $notice = __('Товар уже в корзине!');
     wc_add_notice($notice, 'notice');
-    wp_redirect( wc_get_checkout_url(), $status = 302 );
+    wp_redirect(wc_get_checkout_url(), $status = 302);
     return false;
   } else {
     return $passed_validation;
   }
 }
+
+function add_content_after_addtocart()
+{
+
+  // get the current post/product ID
+  $current_product_id = get_the_ID();
+
+  // get the product based on the ID
+  $product = wc_get_product($current_product_id);
+
+  // get the "Checkout Page" URL
+  $checkout_url = WC()->cart->get_checkout_url();
+
+  // run only on simple products
+  // if( $product->is_type( 'simple' ) ){
+  echo '<a href="' . $checkout_url . '?add-to-cart=' . $current_product_id . '" class="single_add_to_cart_button  go-to-checkout button alt">' . __('Купить') . '</a>';
+  // }
+}
+add_action('woocommerce_after_add_to_cart_button', 'add_content_after_addtocart');

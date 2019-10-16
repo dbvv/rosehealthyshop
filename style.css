@@ -43,3 +43,10 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
 .woocommerce-breadcrumb {
   visibility: hidden;
 }
+
+/**
+ * Simple add to cart
+ */
+.go-to-checkout {
+  margin-left: 10px;
+}
