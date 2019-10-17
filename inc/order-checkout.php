@@ -29,7 +29,7 @@ remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment
 
 function woocommerce_button_proceed_to_checkout()
 {
-  $checkout_url = WC()->cart->get_checkout_url();?>
+?>
  <a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="checkout-button button alt wc-forward">
  <?php esc_html_e('Оплатить заказ', 'woocommerce');?>
  </a>

@@ -114,7 +114,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             </div>
           <?php } ?>
 
-          <?php echo __('Total', 'woocommerce') . ' ' . $woocommerce->cart->get_cart_total(); ?>
+          <?php echo '<span class="total">' . __('Total', 'woocommerce') . ' ' . $woocommerce->cart->get_cart_total() . '</span>'; ?>
 
           <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 

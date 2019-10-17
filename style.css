@@ -57,3 +57,10 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
 .single-product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
   display: none !important;
 }
+
+/**
+ * Cart styles
+ */
+span.total {
+  margin-right: 25px;
+}

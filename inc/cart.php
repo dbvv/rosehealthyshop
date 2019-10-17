@@ -35,7 +35,7 @@ function add_content_after_addtocart()
   $product = wc_get_product($current_product_id);
 
   // get the "Checkout Page" URL
-  $checkout_url = WC()->cart->get_checkout_url();
+  $checkout_url = wc_get_checkout_url();
 
   // run only on simple products
   // if( $product->is_type( 'simple' ) ){
