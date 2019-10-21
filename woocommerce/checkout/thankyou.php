@@ -37,6 +37,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php else : ?>
 
+      <h1 class="text-center"><?php _e('Спасибо за Покупку!') ?></h1>
+
+      <p>Товар отправлен на ваш емейл (<?php echo $order->get_billing_email(); ?>) а так же вы можете скачать товар в личном кабинете в <a href="/my-account/downloads/">Загрузках</a> )</p>
+
       <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
 
       <ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
