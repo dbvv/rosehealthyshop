@@ -22,28 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 $products = $order->get_items();
 ?>
 
-  <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-    <thead>
-      <tr>
-        <th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-        <th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($products as $product): ?>
-      	<tr>
-      		<td><?php echo $product->get_name(); ?></td>
-      		<td><?php echo $order->get_item_total($product) ?></td>
-      	</tr>
-      <?php endforeach ?>
-    </tbody>
-  </table>
-
 <ul class="order_details">
 	<li class="order">
 		<?php esc_html_e( 'Order number:', 'woocommerce' ); ?>
 		<strong><?php echo esc_html( $order->get_order_number() ); ?></strong>
 	</li>
+  <?php foreach ($products as $product): ?>
+    <li><?php echo $product->get_name() . ' - ' . wc_price($order->get_item_total($product)) ?></li>
+  <?php endforeach ?>
 	<li>
 		<?php esc_html_e('Email') ?>
 		<strong><?php echo $order->get_billing_email(); ?></strong>
