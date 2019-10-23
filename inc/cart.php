@@ -18,7 +18,7 @@ function wc_limit_one_per_order($passed_validation, $product_id)
   if ($in_cart) {
     $notice = __('Товар уже в корзине!');
     wc_add_notice($notice, 'notice');
-    wp_redirect(wc_get_checkout_url(), $status = 302);
+    // wp_redirect(wc_get_checkout_url(), $status = 302);
     return false;
   } else {
     return $passed_validation;
@@ -42,4 +42,4 @@ function add_content_after_addtocart()
   echo '<a href="' . $checkout_url . '?add-to-cart=' . $current_product_id . '" class="single_add_to_cart_button  go-to-checkout button alt">' . __('Купить') . '</a>';
   // }
 }
-add_action('woocommerce_after_add_to_cart_button', 'add_content_after_addtocart');
+add_action('woocommerce_before_add_to_cart_button', 'add_content_after_addtocart');

@@ -44,6 +44,8 @@ if (is_bought($current_product_id)) {
 // get the "Checkout Page" URL
   $checkout_url = wc_get_checkout_url();
 
+  echo '<a href="' . $checkout_url . '?add-to-cart=' . $current_product_id . '" class="single_add_to_cart_button  go-to-checkout button alt">' . __('Купить') . '</a>';
+
   echo apply_filters('woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
     sprintf('<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
       esc_url($product->add_to_cart_url()),
@@ -54,5 +56,4 @@ if (is_bought($current_product_id)) {
     ),
     $product, $args);
 
-  echo '<a href="' . $checkout_url . '?add-to-cart=' . $current_product_id . '" class="single_add_to_cart_button  go-to-checkout button alt">' . __('Купить') . '</a>';
 }

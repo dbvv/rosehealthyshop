@@ -44,7 +44,7 @@ if (is_bought($current_product_id)) {
 $product = wc_get_product($current_product_id);
 
 // get the "Checkout Page" URL
-$checkout_url = WC()->cart->get_checkout_url();
+$checkout_url = wc_get_checkout_url();
 
 echo wc_get_stock_html( $product ); // WPCS: XSS ok.
 
