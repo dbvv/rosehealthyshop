@@ -28,7 +28,7 @@ $products = $order->get_items();
 		<strong><?php echo esc_html( $order->get_order_number() ); ?></strong>
 	</li>
   <?php foreach ($products as $product): ?>
-    <li><?php echo $product->get_name() . ' - ' . wc_price($order->get_item_total($product)) ?></li>
+    <li><?php echo $product->get_name(); ?></li>
   <?php endforeach ?>
 	<li>
 		<?php esc_html_e('Email') ?>
