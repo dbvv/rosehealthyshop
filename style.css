@@ -64,3 +64,8 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
 span.total {
   margin-right: 25px;
 }
+
+.page-title, .entry-title {
+  font-weight: bold;
+  text-align: center;
+}
