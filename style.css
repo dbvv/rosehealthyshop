@@ -72,7 +72,7 @@ span.total {
 }
 
 div.woocommerce-message {
-    display: none !important;
+    /*display: none !important;*/
 }
 
 .button {

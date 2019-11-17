@@ -68,3 +68,8 @@ function remove_added_to_cart_notice()
 add_action('woocommerce_before_single_product', 'remove_added_to_cart_notice', 1);
 add_action('woocommerce_shortcode_before_product_cat_loop', 'remove_added_to_cart_notice', 1);
 add_action('woocommerce_before_shop_loop', 'remove_added_to_cart_notice', 1);
+
+add_action('woocommerce_review_order_before_payment', 'propositions_text_after_billing_forms');
+function propositions_text_after_billing_forms() {
+  echo '<p> На указанный вами Email будет отправлен товар сразу после оплаты. Так же вы можете в любой момент скачать товар в личном кабинете в разделе Загрузки.</p>';
+}
