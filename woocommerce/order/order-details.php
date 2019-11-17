@@ -28,21 +28,22 @@ $show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchas
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
 $downloads             = $order->get_downloadable_items();
 $show_downloads        = $order->has_downloadable_item() && $order->is_download_permitted();
-
-if ( $show_downloads ) {
-	wc_get_template(
-		'order/order-downloads.php',
-		array(
-			'downloads'  => $downloads,
-			'show_title' => true,
-		)
-	);
-}
 ?>
+
 <section class="woocommerce-order-details">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
 	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+
+	<p><?php
+	  /* translators: 1: order number 2: order date 3: order status */
+	  printf(
+	    __( 'Order #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce' ),
+	    '<mark class="order-number">' . $order->get_order_number() . '</mark>',
+	    '<mark class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</mark>',
+	    '<mark class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</mark>'
+	  );
+	?></p>
 
 	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 
