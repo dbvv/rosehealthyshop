@@ -15,67 +15,66 @@
  * @version 3.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
-if ( ! $product->is_purchasable() ) {
-	return;
+if (!$product->is_purchasable()) {
+    return;
 }
-
 
 $current_product_id = $product->get_id();
 
 if (is_bought($current_product_id)) {
-	echo '<p>' . __('Товар уже куплен!') . '</p>';
-  // get all downloadable files from the product
-  $files = $product->get_downloads();
-  $files_output = '';
+    echo '<p>' . __('Товар уже куплен!') . '</p>';
+    // get all downloadable files from the product
+    $files        = $product->get_downloads();
+    $files_output = '';
 
-  //Loop through each downloadable file
-  foreach ($files as $file) {
-    //store the html with link and name in $output variable assuming the $output variable is declared above
-    $files_output .= '<p><a href="' . $file['file'] . '" class="button" download target="_blank"><i class="fa fa-download"></i> ' . $file['name'] . '</a></p>';
+    //Loop through each downloadable file
+    foreach ($files as $file) {
+        //store the html with link and name in $output variable assuming the $output variable is declared above
+        $files_output .= '<p><a href="' . $file['file'] . '" class="button" download target="_blank"><i class="fa fa-download"></i> ' . $file['name'] . '</a></p>';
 
-    echo $files_output;
-  }
+        echo $files_output;
+    }
+} elseif (find_product_in_cart($current_product_id)) {
+    echo "<button class=\"button\" disabled>В корзине</button>";
 } else {
-	// get the product based on the ID
-$product = wc_get_product($current_product_id);
+    // get the product based on the ID
+    $product = wc_get_product($current_product_id);
 
 // get the "Checkout Page" URL
-$checkout_url = wc_get_checkout_url();
+    $checkout_url = wc_get_checkout_url();
 
-echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+    echo wc_get_stock_html($product); // WPCS: XSS ok.
 
-if ( $product->is_in_stock() ) : ?>
+    if ($product->is_in_stock()): ?>
 
-	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+  <?php do_action('woocommerce_before_add_to_cart_form');?>
 
-	<form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
-		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+  <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+    <?php do_action('woocommerce_before_add_to_cart_button');?>
 
-		<?php
-		do_action( 'woocommerce_before_add_to_cart_quantity' );
+    <?php
+do_action('woocommerce_before_add_to_cart_quantity');
 
-		// woocommerce_quantity_input( array(
-		// 	'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
-		// 	'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-		// 	'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
-		// ) );
+    // woocommerce_quantity_input( array(
+    //     'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+    //     'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+    //     'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+    // ) );
 
-		do_action( 'woocommerce_after_add_to_cart_quantity' );
-		?>
+    do_action('woocommerce_after_add_to_cart_quantity');
+    ?>
 
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+    <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 
 
-		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-	</form>
+    <?php do_action('woocommerce_after_add_to_cart_button');?>
+  </form>
 
-	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+  <?php do_action('woocommerce_after_add_to_cart_form');?>
 
-<?php endif;	
+<?php endif;
 }
-
-

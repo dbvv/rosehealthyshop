@@ -65,7 +65,21 @@ span.total {
   margin-right: 25px;
 }
 
-.page-title, .entry-title {
+.page-title {
   font-weight: bold;
   text-align: center;
+  color: #7d7051;
+}
+
+div.woocommerce-message {
+    display: none !important;
+}
+
+.button {
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.21);
+}
+
+.handheld-navigation {
+  transition: none !important;
 }
