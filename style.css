@@ -15,6 +15,17 @@ Version:        0.1.0
     float: none;
     width: 100%;
 }
+.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+    margin-bottom: 0px;
+}
+.page-title, .woocommerce-account .entry-title, .woocommerce .page-title {
+    font-weight: bold;
+    text-align: center;
+    color: #7d7051;
+}
+.entry-header {
+    padding-bottom: 2em !important;
+}
 /**
  * Woocommerce checkout form
  */
@@ -64,11 +75,7 @@ form.woocommerce-checkout .order-checkout-product, form.woocommerce-checkout #cu
 span.total {
     margin-right: 25px;
 }
-.page-title {
-    font-weight: bold;
-    text-align: center;
-    color: #7d7051;
-}
+
 div.woocommerce-message {
     /*display: none !important;*/
 }
@@ -100,3 +107,12 @@ div.woocommerce-message {
 a {
     outline: none !important;
 }
+
+.woocommerce-order-details__title {
+    font-weight: 100 !important;
+}
+
+.woocommerce-info{
+    background-color: #7d7051;
+}
+

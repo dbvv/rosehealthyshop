@@ -18,6 +18,8 @@ function rhs_remove_storefront_header_search()
     }
     return $currency_symbol;
   }
+
+  remove_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
 
 add_action('wp_enqueue_scripts', 'rhs_disable_woocommerce_cart_fragments', 11);
