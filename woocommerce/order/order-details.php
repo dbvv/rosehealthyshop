@@ -33,7 +33,7 @@ $show_downloads        = $order->has_downloadable_item() && $order->is_download_
 <section class="woocommerce-order-details">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<h2 class="woocommerce-order-details__title">aaa<?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
 
 	<p><?php
 	  /* translators: 1: order number 2: order date 3: order status */

@@ -38,3 +38,10 @@ function remove_required_fields($required_fields)
 
   return $required_fields;
 }
+
+add_filter( 'woocommerce_endpoint_edit-account_title', 'change_my_account_edit_account_title', 10, 2 );
+function change_my_account_edit_account_title( $title, $endpoint ) {
+    $title = __( "Настройки", "woocommerce" );
+
+    return $title;
+}

@@ -34,7 +34,7 @@ if (is_bought($current_product_id)) {
     //Loop through each downloadable file
     foreach ($files as $file) {
         //store the html with link and name in $output variable assuming the $output variable is declared above
-        $files_output .= '<p><a href="' . $file['file'] . '" class="button" download target="_blank"><i class="fa fa-download"></i> ' . $file['name'] . '</a></p>';
+        $files_output .= '<p><a href="' . $file['file'] . '" class="button" download target="_blank"><i class="fa fa-download"></i> ' . $product->get_name() . ' - ' . $file['name'] . '</a></p>';
 
         echo $files_output;
     }
