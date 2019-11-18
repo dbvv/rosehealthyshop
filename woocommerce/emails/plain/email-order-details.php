@@ -20,7 +20,10 @@ defined( 'ABSPATH' ) || exit;
 do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email );
 
 /* translators: %1$s: Order ID. %2$s: Order date */
-echo wp_kses_post( wc_strtoupper( sprintf( esc_html__( '[Order #%1$s] (%2$s)', 'woocommerce' ), $order->get_order_number(), wc_format_datetime( $order->get_date_created() ) ) ) ) . "\n";
+echo wp_kses_post( wc_strtoupper( sprintf( esc_html__( 'Заказ #%1$s', 'woocommerce' ), $order->get_order_number(), wc_format_datetime( $order->get_date_created() ) ) ) ) . "\n";
+
+echo "Вы можете скачать ваш товар по ссылке ниже, либо перейдя в «Мой Кабинет» раздел «Загрузки»\n";
+
 echo "\n" . wc_get_email_order_items( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	$order,
 	array(
