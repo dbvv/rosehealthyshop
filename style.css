@@ -18,7 +18,7 @@ Version:        0.1.0
 .home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
     margin-bottom: 0px;
 }
-.page-title, .woocommerce-account .entry-title, .woocommerce .page-title {
+.page-title, .woocommerce-account .entry-title, .woocommerce .page-title, .entry-title {
     font-weight: bold;
     text-align: center;
     color: #7d7051;
@@ -118,4 +118,8 @@ a {
 
 .single-product .site-content {
     margin-top: 2em;
+}
+
+h1.product_title.entry-title {
+    font-weight: normal;
 }

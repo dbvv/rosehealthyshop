@@ -80,9 +80,10 @@
   [X] Все заголовки по центру и жирным
   [X] 1. Когда нажимаю правила и условия перекидывает на новую страницу
   [X] 3. Меню тормозит когда его закрываешь в Мобильной версии
-  [ ] fix headers
-  [ ] Product remove featured products
+  [X] fix headers
+  [X] Product remove featured products
   [ ] My account. User name up to menu
   [ ] remove add to cart notification
   [ ] after payment go button make with border radius
   [ ] Политика конфиденциальности
+  [ ] change button download names
