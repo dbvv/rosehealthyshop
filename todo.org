@@ -82,8 +82,8 @@
   [X] 3. Меню тормозит когда его закрываешь в Мобильной версии
   [X] fix headers
   [X] Product remove featured products
-  [ ] My account. User name up to menu
-  [ ] remove add to cart notification
-  [ ] after payment go button make with border radius
+  [X] My account. User name up to menu
+  [X] remove add to cart notification
+  [X] after payment go button make with border radius
   [ ] Политика конфиденциальности
   [ ] change button download names

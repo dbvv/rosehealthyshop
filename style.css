@@ -77,9 +77,9 @@ span.total {
 }
 
 div.woocommerce-message {
-    /*display: none !important;*/
+    display: none !important;
 }
-.button {
+.button, button[type="submit"] {
     border-radius: 20px;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.21);
     outline: none !important;
@@ -122,4 +122,11 @@ a {
 
 h1.product_title.entry-title {
     font-weight: normal;
+}
+
+@media screen and (max-width: 560px) {
+    .page.page-id-9 .woocommerce {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
