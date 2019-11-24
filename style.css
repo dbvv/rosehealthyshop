@@ -130,3 +130,23 @@ h1.product_title.entry-title {
         flex-direction: column-reverse;
     }
 }
+label[for="payment_method_ymb-payments-gateway"] {
+    color: transparent;
+}
+label[for="payment_method_ymb-payments-gateway"]::before {
+    color: rgb(66, 48, 29);
+}
+
+label[for="payment_method_ymb-payments-gateway"]::after {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 10px;
+    width: 250px;
+    height: 40px;
+    background: url(./images/yandex-money.jpeg),  url(./images/cards.jpeg);
+    background-position: left center, right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
