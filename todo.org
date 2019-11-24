@@ -67,7 +67,7 @@
     [X] И вы могли бы убрать копейки в сумме(.00)
     [X] А ещё поменяйте местами пожалуйста кнопки В Корзину и Купить, чтобы сначала кнопка Купить была
 
-[-] November editions
+[X] November editions
   [X] mutiple mails
   [X] убрать оповещение
   [X] убрать ваш заказ и вместо жтого оставить таблицу. Итого сделать сумму
@@ -85,5 +85,5 @@
   [X] My account. User name up to menu
   [X] remove add to cart notification
   [X] after payment go button make with border radius
-  [ ] Политика конфиденциальности
-  [ ] change button download names
+  [X] Политика конфиденциальности
+  [X] change button download names
