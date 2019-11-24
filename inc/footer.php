@@ -16,7 +16,7 @@ function storefront_credit()
 
   if (apply_filters('storefront_privacy_policy_link', true) && function_exists('the_privacy_policy_link')) {
     $separator    = '<span role="separator" aria-hidden="true"></span>';
-    $links_output = get_the_privacy_policy_link('', (!empty($links_output) ? $separator : '')) . $links_output;
+    $links_output .=  $separator . get_the_privacy_policy_link('');
   }
 
   ?>
