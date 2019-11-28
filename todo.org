@@ -108,3 +108,12 @@
     [ ] Ссылка на кнопку в png формате https://image.flaticon.com/icons/png/512/16/16033.png
     [ ] Заменить кнопку меню на другую динамичную кнопку
   [ ] Нужно чтобы пароль генерировался только из английских букв и цифр/ И если нету ограничений в 8 символов то достаточно 6-и символов
+
+[ ] design editions
+  [ ] fix header minicart colo like in header
+  [ ] menu to right. With mini cart
+  [ ] buttons like header
+  [ ] header hamburger menu
+  [ ] mobile nav. Нужно сделать меньше расстояние между словами и слова сделать более жирными и крупными
+  [ ] Я вот думаю может вообще в детсктопе убрать слово корзина
+  [ ] text with privacy policy

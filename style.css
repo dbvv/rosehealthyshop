@@ -137,11 +137,10 @@ label[for="payment_method_ymb-payments-gateway"]::after {
     position: absolute;
     left: 60px;
     top: 10px;
-    width: 250px;
+    width: 80%;
     height: 40px;
-    background: url(http://images.vfl.ru/ii/1574691339/c72aa951/28688794.png
-);
-    background-position: left center, right center;
+    background: url(http://images.vfl.ru/ii/1574691339/c72aa951/28688794.png);
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 99;
@@ -165,13 +164,19 @@ button.menu-toggle:before, button.menu-toggle:after, button.menu-toggle span:bef
 }
 button.menu-toggle {
     padding: 8px 20px;
-    display: flex;
-    flex-direction: row;
     margin-top: 10px;
+}
+button.menu-toggle:focus {
+    outline: none;
 }
 button.menu-toggle::before {
     transform: translateY(-10px);
 }
 button.menu-toggle::after {
     transform: translateY(10px);
+}
+
+#payment .place-order .button {
+    width: auto;
+    font-size: inherit;
 }
