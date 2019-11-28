@@ -11,7 +11,7 @@ function storefront_credit()
 
   if (apply_filters('storefront_credit_link', true)) {
     $rules_permalink = get_permalink(get_theme_mod('rules_page'));
-    $links_output .= '<a href="' . $rules_permalink . '"  title="' . esc_attr__('Правила и условия', 'storefront') . '" rel="author">' . esc_html__('Правила и условия', 'storefront') . '</a>.';
+    $links_output .= '<a href="' . $rules_permalink . '"  title="' . esc_attr__('Правила и условия', 'storefront') . '" rel="author">' . esc_html__('Правила и условия', 'storefront') . '</a>';
   }
 
   if (apply_filters('storefront_privacy_policy_link', true) && function_exists('the_privacy_policy_link')) {
