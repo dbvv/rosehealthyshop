@@ -45,3 +45,8 @@ require get_stylesheet_directory() . '/inc/footer.php';
  * Customizer settings
  */
 require get_stylesheet_directory() . '/inc/customizer.php';
+
+/**
+ * User functions
+ */
+require get_stylesheet_directory() . '/inc/user-functions.php';

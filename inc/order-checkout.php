@@ -11,8 +11,8 @@ function rhs_checkout_fields($fields)
     // unset($fields['billing']);
     unset($fields['shipping']);
     unset($fields['notes']);
-    unset($fields['billing']['billing_first_name']);
-    unset($fields['billing']['billing_last_name']);
+    // unset($fields['billing']['billing_first_name']);
+    // unset($fields['billing']['billing_last_name']);
     unset($fields['billing']['billing_company']);
     unset($fields['billing']['billing_country']);
     unset($fields['billing']['billing_address_1']);

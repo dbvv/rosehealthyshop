@@ -39,3 +39,28 @@ function remove_shop_breadcrumbs()
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
   }
 }
+
+function storefront_primary_navigation() {
+    ?>
+    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+    <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+      <span></span>
+    </button>
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location'  => 'primary',
+          'container_class' => 'primary-navigation',
+        )
+      );
+
+      wp_nav_menu(
+        array(
+          'theme_location'  => 'handheld',
+          'container_class' => 'handheld-navigation',
+        )
+      );
+      ?>
+    </nav><!-- #site-navigation -->
+    <?php
+  }
