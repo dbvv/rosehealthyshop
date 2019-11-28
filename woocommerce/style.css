@@ -18,11 +18,10 @@ Version:        0.1.0
 .home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
     margin-bottom: 0px;
 }
-.page-title, .woocommerce-account .entry-title, .woocommerce .page-title, .entry-title {
-   font-weight: bold;
+.page-title, .woocommerce-account .entry-title, .woocommerce .page-title {
+    font-weight: bold;
     text-align: center;
-    color: #928871;;
-    font-size: 26px;
+    color: #7d7051;
 }
 .entry-header {
     padding-bottom: 2em !important;
@@ -78,9 +77,9 @@ span.total {
 }
 
 div.woocommerce-message {
-    display: none !important;
+    /*display: none !important;*/
 }
-.button, button[type="submit"] {
+.button {
     border-radius: 20px;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.21);
     outline: none !important;
@@ -117,45 +116,3 @@ a {
     background-color: #7d7051;
 }
 
-.single-product .site-content {
-    margin-top: 2em;
-}
-
-h1.product_title.entry-title {
-    font-weight: normal;
-}
-
-@media screen and (max-width: 560px) {
-    .page.page-id-9 .woocommerce {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-}
-label[for="payment_method_ymb-payments-gateway"] {
-    color: transparent;
-}
-label[for="payment_method_ymb-payments-gateway"]::before {
-    color: rgb(66, 48, 29);
-}
-
-label[for="payment_method_ymb-payments-gateway"]::after {
-    content: '';
-    position: absolute;
-    left: 60px;
-    top: 10px;
-    width: 250px;
-    height: 40px;
-    background: url(http://images.vfl.ru/ii/1574691339/c72aa951/28688794.png
-);
-    background-position: left center, right center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 99;
-}
-
-/**
- * Cart
- */
-.remove_from_cart_button:before, a.remove:before {
-    color: #C14B52 !important;
-}
