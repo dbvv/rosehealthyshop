@@ -136,9 +136,9 @@ label[for="payment_method_ymb-payments-gateway"]::after {
     content: '';
     position: absolute;
     left: 60px;
-    top: 10px;
+    top: 0px;
     width: 80%;
-    height: 40px;
+    height: 60px;
     background: url(http://images.vfl.ru/ii/1574691339/c72aa951/28688794.png);
     background-position: center;
     background-size: contain;
